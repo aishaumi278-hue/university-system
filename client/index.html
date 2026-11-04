@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>УИС — Управление учебными курсами</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1>Университетская Информационная Система (УИС)</h1>
+        <h2>Модуль управления учебными курсами</h2>
+    </header>
+
+    <main class="container">
+        <!-- Секция формы добавления -->
+        <section class="card">
+            <h3>Добавить новый курс</h3>
+            <form id="courseForm">
+                <div class="form-group">
+                    <label for="courseCode">Код курса (напр. CS101):</label>
+                    <input type="text" id="courseCode" required placeholder="напр. CS302">
+                </div>
+                <div class="form-group">
+                    <label for="courseTitle">Название дисциплины:</label>
+                    <input type="text" id="courseTitle" required placeholder="напр. Веб-разработка">
+                </div>
+                <div class="form-group">
+                    <label for="courseCredits">Кредиты ECTS:</label>
+                    <input type="number" id="courseCredits" min="1" max="15" required value="5">
+                </div>
+                <button type="submit" id="btnSubmit" class="btn btn-primary">Сохранить курс</button>
+            </form>
+            <div id="formAlert" class="alert hidden"></div>
+        </section>
+
+        <!-- Секция списка курсов -->
+        <section class="card">
+            <div class="section-header">
+                <h3>Реестр курсов</h3>
+                <button id="btnRefresh" class="btn btn-secondary">Обновить</button>
+            </div>
+
+            <!-- Самостоятельное задание: Поиск / Фильтрация в реальном времени -->
+            <div class="form-group" style="margin-top: 15px;">
+                <input type="text" id="searchInput" placeholder="Поиск курса по названию...">
+            </div>
+
+            <div id="loadingSpinner" class="spinner hidden">Загрузка данных...</div>
+
+            <table class="data-table" id="coursesTable">
+                <thead>
+                    <tr>
+                        <th>Код</th>
+                        <th>Название дисциплины</th>
+                        <th>Кредиты</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="coursesTbody">
+                    <!-- Заполняется динамически из JS -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
