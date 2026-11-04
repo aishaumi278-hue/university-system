@@ -1,0 +1,22 @@
+{
+    "info": {
+        "name": "UIS_Week2_Collection",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Get All Courses",
+            "request": {
+                "method": "GET",
+                "url": "{{baseUrl}}/courses?category=CS"
+            }
+        },
+        {
+            "name": "Get Students by Group",
+            "request": {
+                "method": "GET",
+                "url": "{{baseUrl}}/students?groupId=CS-21"
+            }
+        }
+    ]
+}
